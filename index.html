@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <title>Antwort-Tracker · Salon-Leads</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,6 +49,11 @@
   .pill.draft{color:var(--accent);background:rgba(124,156,255,.12)}
   .pill.none{color:var(--gray);background:rgba(107,113,128,.12)}
   .card .date{font-size:.8rem;color:var(--muted);min-width:96px;text-align:right}
+  .card .reply{flex-basis:100%;margin-top:.5rem;padding-top:.85rem;border-top:1px dashed var(--line);display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+  .card .reply .subj{font-size:.92rem;color:var(--text)}
+  .card .reply .subj b{color:var(--muted);font-weight:500;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:.2rem}
+  .card .reply a.open{font-size:.8rem;color:var(--green);border:1px solid rgba(63,207,142,.4);padding:.5rem 1rem;border-radius:100px;white-space:nowrap;text-decoration:none;transition:background .2s}
+  .card .reply a.open:hover{background:rgba(63,207,142,.12)}
   footer{margin-top:2rem;padding-top:1.4rem;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem}
   .legend{display:flex;gap:1.2rem;flex-wrap:wrap}
   .legend span{display:inline-flex;align-items:center;gap:.4rem}
@@ -115,11 +121,20 @@
       const L = LABELS[l.status]||LABELS.none;
       const el = document.createElement("div");
       el.className = "card"+(l.status==="replied"?" replied":"");
+      let replyHtml = "";
+      if(l.status==="replied" && (l.replySubject || l.gmailLink)){
+        replyHtml =
+          '<div class="reply"><div class="subj"><b>Antwort erhalten</b>'+
+          (l.replySubject ? l.replySubject : "(Betreff nicht verfügbar)")+'</div>'+
+          (l.gmailLink ? '<a class="open" href="'+l.gmailLink+'" target="_blank" rel="noopener">In Gmail öffnen ↗</a>' : '')+
+          '</div>';
+      }
       el.innerHTML =
         '<div class="main"><div class="name">'+l.name+'</div>'+
         '<div class="meta"><a href="mailto:'+l.email+'">'+l.email+'</a></div></div>'+
         '<span class="pill '+L.cls+'">'+L.txt+'</span>'+
-        '<div class="date">'+(l.date||"—")+'</div>';
+        '<div class="date">'+(l.date||"—")+'</div>'+
+        replyHtml;
       listEl.appendChild(el);
     });
     document.getElementById("s-replied").textContent=c.replied;
