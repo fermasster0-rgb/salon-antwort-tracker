@@ -1,10 +1,10 @@
 {
-  "lastChecked": "17.07.2026, 06:02 Uhr",
+  "lastChecked": "17.07.2026, 10:02 Uhr",
   "leads": [
-    { "name": "Exquisite Hair & Beauty",  "email": "office@exquisite-styles.at",   "status": "sent", "date": "04.07.2026" },
-    { "name": "Hair & Beauty by Azra",    "email": "kasmin_azra@hotmail.de",       "status": "sent", "date": "04.07.2026" },
-    { "name": "ultimativgroup (1180)",    "email": "salon1180@ultimativgroup.at",  "status": "sent", "date": "05.07.2026" },
-    { "name": "Haarmacherei Wien",        "email": "office@haarmacherei.at",       "status": "sent", "date": "05.07.2026" },
-    { "name": "Michael's Friseur",        "email": "office@michaels.wien",         "status": "sent", "date": "05.07.2026" }
+    { "name": "Exquisite Hair & Beauty", "email": "office@exquisite-styles.at", "status": "sent", "date": "04.07.2026" },
+    { "name": "Hair & Beauty by Azra",   "email": "kasmin_azra@hotmail.de",     "status": "sent", "date": "04.07.2026" },
+    { "name": "ultimativgroup (1180)",   "email": "salon1180@ultimativgroup.at","status": "sent", "date": "05.07.2026" },
+    { "name": "Haarmacherei Wien",       "email": "office@haarmacherei.at",     "status": "sent", "date": "05.07.2026" },
+    { "name": "Michael's Friseur",       "email": "office@michaels.wien",       "status": "sent", "date": "05.07.2026" }
   ]
 }
