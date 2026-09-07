@@ -1,7 +1,7 @@
 {
-  "lastChecked": "noch nicht automatisch geprüft",
+  "lastChecked": "07.09.2026, 18:40 Uhr",
   "leads": [
-    { "name": "Exquisite Hair & Beauty", "email": "office@exquisite-styles.at", "status": "sent", "date": "04.07.2026" },
+    { "name": "Exquisite Hair & Beauty", "email": "office@exquisite-styles.at", "status": "none", "date": "" },
     { "name": "Hair & Beauty by Azra",   "email": "kasmin_azra@hotmail.de",     "status": "none", "date": "" },
     { "name": "ultimativgroup (1180)",   "email": "salon1180@ultimativgroup.at","status": "none", "date": "" },
     { "name": "Haarmacherei Wien",       "email": "office@haarmacherei.at",     "status": "none", "date": "" },
